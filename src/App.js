@@ -70,16 +70,16 @@ function App() {
   let result = Array.isArray(j)
   
 
-  console.log(a, "Add Element at lest");
-  console.log(b, "Add Eleement at first");
-  console.log(c, "Remoce lement at last");
-  console.log(d, "Remoce lement at First");
-  console.log(e, "Add Element at Splice Add");
-  console.log(f, "Add Element at Splice Remove");
-  console.log(g, "Convert Array to string");
-  console.log(res, "Check within array return true/flase");
-  console.log(re, "Check within array return first match Element ");
-  console.log(result, "Check Given Element in Array into String");
+  console.log(a, "Add Element at lest" , "push");
+  console.log(b, "Add Eleement at first" , "unShift");
+  console.log(c, "Remove Element at last" , "pop");
+  console.log(d, "Remove Element at First" , "shift");
+  console.log(e, "Add Element at Splice Add" , "splice");
+  console.log(f, "Add Element at Splice Remove" , "splice");
+  console.log(g, "Convert Array to string" , "toString");
+  console.log(res, "Check within array return true/flase" , "some");
+  console.log(re, "Check within array return first match Element " , "find");
+  console.log(result, "Check Given Element in Array into String" , "isArray");
 
 
 
