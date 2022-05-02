@@ -126,39 +126,51 @@ function App() {
     }
   ];
 
-  console.log(arr.map((i) => {return i}));
+  console.log(arr.map((i) => { return i }));
 
-  console.log(arr.filter((f) => {return f.expiry >= 2022}));
+  console.log(arr.filter((f) => { return f.expiry >= 2022 }));
 
   // const totle = 0;
   // console.log(arr.reduce((previousValue, currentValue,v) => {return v.price = totle}));
-  console.log(arr.reduce((g) => {return g.price >= 251}));
+  // console.log(arr.reduce((g) => { return g.price >= 251 }));
 
+  let a = arr.filter((f) => { return f.expiry >= 2022 });
+
+  let ans = a.reduce((acc, d, i) => acc + d.price, 0);
+  // .reduce((acc, d, i) => acc + d.price, 0);
   // function totle(total, num){
   //   return total + num;
   // }
+
+  console.log(ans);
 
 
 
 
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <table>
+        <th>
+          <td>ID</td>
+          <td>Name</td>
+          <td>Price</td>
+        </th>
+        <tbody>
+          {
+            arr.map((d, i) => {
+              return (
+                <tr>
+                  <td>{d.id}</td>
+                  <td>{d.name}</td>
+                  <td>{d.ans}</td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
+    </>
   );
 }
 
