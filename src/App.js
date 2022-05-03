@@ -126,44 +126,51 @@ function App() {
     }
   ];
 
-  console.log(arr.map((i) => { return i }));
+  let filterData = arr.filter((f) =>  f.expiry >= 2022 );
 
-  console.log(arr.filter((f) => { return f.expiry >= 2022 }));
 
-  // const totle = 0;
-  // console.log(arr.reduce((previousValue, currentValue,v) => {return v.price = totle}));
-  // console.log(arr.reduce((g) => { return g.price >= 251 }));
-
-  let a = arr.filter((f) => { return f.expiry >= 2022 });
-
-  let ans = a.reduce((acc, d, i) => acc + d.price, 0);
-  // .reduce((acc, d, i) => acc + d.price, 0);
-  // function totle(total, num){
-  //   return total + num;
-  // }
+  let ans = arr.filter((f) => f.expiry >= 2022 )
+   .reduce((acc, d, i) => acc + d.price, 0);
 
   console.log(ans);
 
 
+  let a = [1,2,3,4,5];
+  let a1 = [...a];
+  console.log(a1);
+
+  let a2 = [99,...a,100];
+  console.log(a2);
+
+  let [maths, eng, guj, ss, sci] = a;
+  console.log(ss);
+
+  
 
 
 
   return (
     <>
-      <table>
-        <th>
+      <table border="1">
+        <tr>
           <td>ID</td>
           <td>Name</td>
+          <td>Quantity</td>
           <td>Price</td>
-        </th>
+          <td>Expiry</td>
+          <td>Total</td>
+        </tr>
         <tbody>
           {
-            arr.map((d, i) => {
+            filterData.map((d, i) => {
               return (
                 <tr>
                   <td>{d.id}</td>
                   <td>{d.name}</td>
-                  <td>{d.ans}</td>
+                  <td>{d.quantity}</td>
+                  <td>{d.price}</td>
+                  <td>{d.expiry}</td>
+                  {i === 0 ? <td rowspan = {arr.length}>{ans}</td> : null}
                 </tr>
               )
             })
