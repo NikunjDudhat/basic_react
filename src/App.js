@@ -83,94 +83,133 @@ function App() {
 
 
 
-  const arr = [
+  // const arr = [
+  //   {
+  //     id: 101,
+  //     name: 'Abacavir',
+  //     quantity: 25,
+  //     price: 150,
+  //     expiry: 2022,
+  //     status: true
+  //   },
+  //   {
+  //     id: 102,
+  //     name: 'Eltrombopag',
+  //     quantity: 90,
+  //     price: 550,
+  //     expiry: 2021,
+  //     status: true
+  //   },
+  //   {
+  //     id: 103,
+  //     name: 'Meloxicam',
+  //     quantity: 85,
+  //     price: 450,
+  //     expiry: 2025,
+  //     status: false
+  //   },
+  //   {
+  //     id: 104,
+  //     name: 'Allopurinol',
+  //     quantity: 50,
+  //     price: 600,
+  //     expiry: 2023,
+  //     status: true
+  //   },
+  //   {
+  //     id: 105,
+  //     name: 'Phenytoin',
+  //     quantity: 63,
+  //     price: 250,
+  //     expiry: 2021,
+  //     status: false
+  //   }
+  // ];
+
+  // let filterData = arr.filter((f) =>  f.expiry >= 2022 );
+
+
+  // let ans = arr.filter((f) => f.expiry >= 2022 )
+  //  .reduce((acc, d, i) => acc + d.price, 0);
+
+  // console.log(ans);
+
+
+  // let a = [1,2,3,4,5];
+  // let a1 = [...a];
+  // console.log(a1);
+
+  // let a2 = [99,...a,100];
+  // console.log(a2);
+
+  // let [maths, eng, guj, ss, sci] = a;
+  // console.log(ss);
+
+  let Employee =[
     {
-      id: 101,
-      name: 'Abacavir',
-      quantity: 25,
-      price: 150,
-      expiry: 2022,
+      name: "amit",
+      age: 35,
+      salary: 40000,
+      bonus: 1000,
       status: true
     },
     {
-      id: 102,
-      name: 'Eltrombopag',
-      quantity: 90,
-      price: 550,
-      expiry: 2021,
-      status: true
-    },
-    {
-      id: 103,
-      name: 'Meloxicam',
-      quantity: 85,
-      price: 450,
-      expiry: 2025,
+      name: "ajay",
+      age: 25,
+      salary: 38000,
+      bonus: 2000,
       status: false
     },
     {
-      id: 104,
-      name: 'Allopurinol',
-      quantity: 50,
-      price: 600,
-      expiry: 2023,
+      name: "mayur",
+      age: 23,
+      salary: 50000,
+      bonus: 500,
       status: true
     },
     {
-      id: 105,
-      name: 'Phenytoin',
-      quantity: 63,
-      price: 250,
-      expiry: 2021,
-      status: false
+      name: "jay",
+      age: 29,
+      salary: 35000,
+      bonus: 600,
+      status: true
+    },
+    {
+      name: "raj",
+      age: 33,
+      salary: 22000,
+      bonus: 2000,
+      status: true
     }
   ];
 
-  let filterData = arr.filter((f) =>  f.expiry >= 2022 );
+  let filter = Employee.filter((a) => a.status == true);
 
-
-  let ans = arr.filter((f) => f.expiry >= 2022 )
-   .reduce((acc, d, i) => acc + d.price, 0);
-
-  console.log(ans);
-
-
-  let a = [1,2,3,4,5];
-  let a1 = [...a];
-  console.log(a1);
-
-  let a2 = [99,...a,100];
-  console.log(a2);
-
-  let [maths, eng, guj, ss, sci] = a;
-  console.log(ss);
+  let ans = Employee.filter((a) => a.status == true).reduce((acc, d, i) => acc + ( d.salary + d.bonus), 0);
 
   
-
-
-
   return (
     <>
       <table border="1">
         <tr>
-          <td>ID</td>
-          <td>Name</td>
-          <td>Quantity</td>
-          <td>Price</td>
-          <td>Expiry</td>
-          <td>Total</td>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <th>Bonus</th>
+          <th>Total</th>
+          <th>Final Total</th>
         </tr>
         <tbody>
           {
-            filterData.map((d, i) => {
+            filter.map((d, i) => {
               return (
                 <tr>
-                  <td>{d.id}</td>
                   <td>{d.name}</td>
-                  <td>{d.quantity}</td>
-                  <td>{d.price}</td>
-                  <td>{d.expiry}</td>
-                  {i === 0 ? <td rowspan = {arr.length}>{ans}</td> : null}
+                  <td>{d.age}</td>
+                  <td>{d.salary}</td>
+                  <td>{d.bonus}</td>
+                  <td>{d.salary +  d.bonus}</td>
+                  {i === 0 ? <td rowspan = {Employee.length}>{ans}</td> : null}
                 </tr>
               )
             })
