@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 function CountryFun(props) {
-    const [country, setCountry, city, setCity] = useState("India");
+    const [country, setCountry] = useState("India");
+    const [city, setCity] = useState("Suart");
     // const [city, setCity] = useState("Suart");
 
     const changeCountry = () =>{
         setCountry('US')
-        setCity('Hello')
+        setCity('New York')
     }
     // const changeCity = () =>{
     //     setCity('Bar')

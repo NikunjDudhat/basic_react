@@ -1,19 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import Country from './container/country';
-import City from './container/city';
+import Country from './container/Country';
 import CountryFun from './container/CountryFun';
 import CityFun from './container/CityFun';
+import City from './container/City';
 
 function App() {
 
 
   return (
     <>
-      <Country />
+      <Country/>
       <City/>
-      <CountryFun/>
-      <CityFun/>
+      <CountryFun />
+      <CityFun Gdp={5.8}/>
     </>
   );
 }
