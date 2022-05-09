@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function CityFun(Gdp) {
+function CityFun({Gdp}) {
     const [gdp, setGdp] = useState(0);
     return (
         <div>
