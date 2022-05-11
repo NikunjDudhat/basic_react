@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Time extends Component {
 
     constructor(props) {
-        super(props);
+        super(props);   //1. constructor Set inital value
         
         this.state = {
             Time : new Date()
