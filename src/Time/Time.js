@@ -7,7 +7,7 @@ class Time extends Component {
         
         this.state = {
             Time : new Date()
-        }
+        } 
     }
 
     tick = () =>{
@@ -27,7 +27,7 @@ class Time extends Component {
     }
 
     componentWillUnmount = () =>{     // 5. componentWillUnmount used to realse resourse from component
-        clearImmediate(this.TimeId);
+        clearInterval(this.TimeId);
     }
 
     
