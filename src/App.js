@@ -9,6 +9,7 @@ import TimeFun from './Time/TimeFun';
 import { useEffect, useState } from 'react';
 import Loading from './component/Loading/Loading';
 import Home from './Home/Home';
+import Count from './Count/Count';
 
 const LoadingWithHome = Loading(Home)
 
@@ -48,6 +49,8 @@ function App() {
         isLoading= {loading}
         data ={data}
       />
+
+      <Count/>
 
 
     </>
